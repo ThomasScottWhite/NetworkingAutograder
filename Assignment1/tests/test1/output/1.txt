@@ -1,0 +1,6 @@
+PageRank of the graph:
+Node 1: 0.2108
+Node 2: 0.2108
+Node 3: 0.2137
+Node 4: 0.2137
+Node 5: 0.1511

@@ -22,7 +22,21 @@ def local_clustering_coefficent(graph):
     """
     nodes = list(graph.nodes())
     clustering_coeffs = dict.fromkeys(nodes, 0)
-    # Implement here
+
+    for node in graph:
+        neighbors = list(graph.neighbors(node))
+        k = len(neighbors)  # Number of neighbors
+
+        if k < 2:
+            # If a node has fewer than 2 neighbors, clustering coefficient is 0
+            clustering_coeffs[node] = 0.0
+        else:
+            # Count the number of edges between neighbors
+            subgraph = graph.subgraph(neighbors)
+            actual_edges = subgraph.number_of_edges()
+
+            # Clustering coefficient formula
+            clustering_coeffs[node] = 2 * actual_edges / (k * (k - 1))
 
     return clustering_coeffs
 
@@ -40,8 +54,20 @@ def global_clustering_coefficient(graph):
     total_closed_triplets = 0
     total_triplets = 0
 
-    # Implement here
+    for node in graph:
+        neighbors = list(graph.neighbors(node))
+        k = len(neighbors)  # Number of neighbors
 
+        if k >= 2:
+            # Count the number of edges between neighbors
+            subgraph = graph.subgraph(neighbors)
+            actual_edges = subgraph.number_of_edges()
+
+            # Update the counts for global clustering coefficient
+            total_closed_triplets += actual_edges
+            total_triplets += k * (k - 1) / 2
+
+    # Calculate the global clustering coefficient (transitivity)
     if total_triplets > 0:
         return total_closed_triplets / total_triplets
     else:

@@ -1,6 +1,7 @@
 import sys
 import glob
 
+
 # If you want to run this test, run it from inside Assignment1
 sys.path.insert(1, ".")
 

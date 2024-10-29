@@ -1,0 +1,8 @@
+Global Clustering Coefficent of the graph
+0.46153846153846156
+Local Clustering Coefficients of the graph:
+Node 1: 0.6667
+Node 2: 0.6667
+Node 3: 0.3333
+Node 4: 0.3333
+Node 5: 0.0000

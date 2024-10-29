@@ -19,7 +19,7 @@ def hits(graph, max_iter=100):
     - max_iter: Maximum number of iterations (default=100).
 
     Returns:
-    - (authorities, hubs): A tuple of two dictionaries with node authority and hub scores.
+    - authorities, hubs
     """
 
     # Initialize authority and hub scores to 1

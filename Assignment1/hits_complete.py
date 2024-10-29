@@ -16,8 +16,7 @@ def hits(graph, max_iter=100):
 
     Parameters:
     - graph: A NetworkX graph (directed).
-    - max_iter: Maximum number of iterations (default=100).
-    - tol: Tolerance to check convergence (default=1.0e-8).
+    - max_iter: Maximum number of iterations.
 
     Returns:
     - (authorities, hubs): A tuple of two dictionaries with node authority and hub scores.
@@ -37,7 +36,7 @@ def hits(graph, max_iter=100):
         for node in graph:
             hubs[node] = sum(auth[neighbor] for neighbor in graph.successors(node))
 
-        # Normalize authority and hub scores
+        # Norm
         norm_auth = sum(auth.values())
         norm_hubs = sum(hubs.values())
 

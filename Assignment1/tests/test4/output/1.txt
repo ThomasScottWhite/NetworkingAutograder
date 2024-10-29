@@ -1,0 +1,6 @@
+Eigenvector Centralitys of the graph
+Node 1: 0.4912
+Node 2: 0.4912
+Node 3: 0.4558
+Node 4: 0.4558
+Node 5: 0.3192

@@ -16,9 +16,8 @@ def page_rank(graph, damping=0.85, max_iterations=100):
 
     Parameters:
     - graph: dict, adjacency list representation of the graph
-    - damping: float, damping factor (default 0.85)
+    - damping: float, damping factor
     - max_iterations: int, maximum number of iterations
-    - tol: float, tolerance for convergence
 
     Returns:
     - PageRank: dict, containing nodes and their PageRank scores

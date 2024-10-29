@@ -5,7 +5,7 @@ try:
     # If you want to run this test, run it from inside Assignment1
     sys.path.insert(1, ".")
 
-    from eigenvector_centrality_complete import eigenvector_centrality, import_graph
+    from eigenvector_centrality import eigenvector_centrality, import_graph
 
     input_files = glob.glob(f'{"./tests/test4/input"}/*')
     output_files = glob.glob(f'{"./tests/test4/output"}/*')
@@ -62,7 +62,36 @@ try:
         if result:
             grade += 100 / len(results)
 
-    print(grade)
+
 except Exception as e:
-    print(0)
     print(e)
+    grade = 0
+
+RED = "\033[91m"
+GREEN = "\033[92m"
+YELLOW = "\033[93m"
+BLUE = "\033[94m"
+MAGENTA = "\033[95m"
+CYAN = "\033[96m"
+RESET = "\033[0m"
+
+if grade > 80:
+    grade_color = GREEN
+elif grade > 60:
+    grade_color = YELLOW
+else:
+    grade_color = RED
+
+# Print the colored test output
+print(f"{CYAN}========================== TEST 4 =========================={RESET}")
+print(f"{GREEN}You have received the following grade: {grade_color}{grade}{RESET}\n")
+
+# print(f"{YELLOW}Expected:{RESET}")
+# print(f"{MAGENTA}PageRank of the graph:{RESET}")
+# for node, rank in pagerank_dict.items():
+#     print(f"Node {node}: {rank:.4f}")
+
+# print(f"\n{RED}Received:{RESET}")
+# print(f"{MAGENTA}PageRank of the graph:{RESET}")
+# for node, rank in students_dict.items():
+#     print(f"Node {node}: {rank:.4f}")

@@ -1,0 +1,13 @@
+Authority Scores of the graph:
+Node 1: 0.5000
+Node 2: 0.0000
+Node 3: 0.0000
+Node 4: 0.0000
+Node 5: 0.5000
+
+Hub Scores of the graph:
+Node 1: 0.0000
+Node 2: 0.0000
+Node 3: 0.5000
+Node 4: 0.5000
+Node 5: 0.0000

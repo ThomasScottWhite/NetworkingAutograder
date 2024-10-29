@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 def import_graph(data):
     edges = eval(f"[{data}]")
-    G = nx.Graph()
+    G = nx.DiGraph()
     G.add_edges_from(edges)
     return G
 
@@ -25,24 +25,26 @@ def hits(graph, max_iter=100):
 
     # Initialize authority and hub scores to 1
     nodes = list(graph.nodes())
-    n = len(nodes)
     auth = dict.fromkeys(nodes, 1.0)
     hubs = dict.fromkeys(nodes, 1.0)
 
     for i in range(max_iter):
         # Update authority scores
-        old_auth = auth.copy()
         for node in graph:
             auth[node] = sum(hubs[neighbor] for neighbor in graph.predecessors(node))
 
         # Update hub scores
-        old_hubs = hubs.copy()
         for node in graph:
             hubs[node] = sum(auth[neighbor] for neighbor in graph.successors(node))
 
         # Normalize authority and hub scores
         norm_auth = sum(auth.values())
         norm_hubs = sum(hubs.values())
+
+        # Euclidan Norm
+        # norm_auth = sum(value ** 2 for value in auth.values()) ** 0.5
+        # norm_hubs = sum(value ** 2 for value in hubs.values()) ** 0.5
+
         auth = {node: score / norm_auth for node, score in auth.items()}
         hubs = {node: score / norm_hubs for node, score in hubs.items()}
 

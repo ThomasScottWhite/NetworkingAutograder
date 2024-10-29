@@ -11,21 +11,9 @@ output_files = glob.glob(f'{"./tests/test1/output"}/*')
 
 
 def compare_dicts_within_threshold(dict1, dict2, threshold=0.005):
-    """
-    Compare two dictionaries to see if their values are within a given threshold.
-
-    Parameters:
-    - dict1, dict2: The two dictionaries to compare
-    - threshold: The maximum allowed difference between values (default 0.005)
-
-    Returns:
-    - bool: True if all corresponding values are within the threshold, False otherwise
-    """
-    # Check if both dictionaries have the same keys
     if dict1.keys() != dict2.keys():
         return False
 
-    # Compare values for each key
     for key in dict1:
         if abs(dict1[key] - dict2[key]) > threshold:
             return False

@@ -51,10 +51,10 @@ def global_clustering_coefficient(graph):
 if __name__ == "__main__":
     data = sys.stdin.read()
     G = import_graph(data)
-    clustering_coeff, global_coeff = local_clustering_coefficent(
-        G
-    ), global_clustering_coefficient(G)
 
+    clustering_coeff = local_clustering_coefficent(G)
+    global_coeff = global_clustering_coefficient(G)
+    
     print("Global Clustering Coefficent of the graph")
     print(global_coeff)
 
